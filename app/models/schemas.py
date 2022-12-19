@@ -7,7 +7,7 @@ class ItemBase(BaseModel):
     name: str
     price: float
     description: Optional[str] = None
-    store_id = int
+    store_id: int
 
 
 class ItemCreate(ItemBase):

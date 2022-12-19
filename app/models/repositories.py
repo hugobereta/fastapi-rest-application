@@ -1,7 +1,6 @@
 # Repository of reusable CRUD functions to interact with data in database
 from sqlalchemy.orm import Session
-import models
-import schemas
+from app.models import models, schemas
 
 
 class ItemRepo:
@@ -11,7 +10,7 @@ class ItemRepo:
             name=item.name,
             price=item.price,
             description=item.description,
-            store_id=item.store_id
+            store_id=item.store_id,
         )
         db.add(db_item)
         db.commit()

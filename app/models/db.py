@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQL_ALCHEMY_DATABASE_URL = 'sqlite:///../data/data.db'
+SQL_ALCHEMY_DATABASE_URL = 'sqlite:///data/data.db'
 
 # This arg is only for SQLite
 CONNECT_ARGS = {
