@@ -5,6 +5,7 @@
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
+from app.api.root import root_router
 from app.models import models, schemas
 from app.models.db import get_db, engine
 from app.models.repositories import ItemRepo, StoreRepo
@@ -19,6 +20,7 @@ app = FastAPI(
     description='Sample FastAPI Application with Swagger and SQLAlchemy',
     version='0.0.1',
 )
+app.include_router(root_router, tags=['Default'])
 
 # Create all the tables
 models.Base.metadata.create_all(bind=engine)
